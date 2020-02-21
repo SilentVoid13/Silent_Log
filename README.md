@@ -2,11 +2,11 @@
 
 Silent_Log is a really simple library you can add to any of your C / C++ project to display some nice and pretty log messages. This includes the following type of messages : 
 
-- log_info
-- log_success
-- log_error
-- log_verbose
-- log_progress
+- `log_info`
+- `log_success`
+- `log_error`
+- `log_verbose`
+- `log_progress`
 
 Silent_Log supports string formatting. It's based on ANSI colors and supports Windows.
 
