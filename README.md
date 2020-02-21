@@ -56,6 +56,10 @@ gcc -o example example.c log.c
 ```
 ![Demo gif](examples/demo.gif)
 
+## License
+
+Silent_Log is licensed under the GNU AGPLv3 license. Refer to [LICENSE](https://github.com/SilentVoid13/Silent_Log/blob/master/LICENSE.txt) for more informations.
+
 ## Resources
 
-To add Windows ANSI color support, Silent_Pass relies on this great project : https://github.com/mattn/ansicolor-w32.c
+To add Windows ANSI color support, Silent_Log relies on this great project : https://github.com/mattn/ansicolor-w32.c
