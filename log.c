@@ -1,9 +1,5 @@
 #include "log.h"
 
-#ifdef _WIN32
-#include "log_win.h"
-#endif // _WIN32
-
 int verbose;
 
 void log_info(char *msg, ...) {
