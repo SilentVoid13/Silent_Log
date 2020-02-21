@@ -53,8 +53,7 @@ int main(int argc, char **argv) {
 ```bash
 gcc -o example example.c log.c
 ```
-
-
+![Demo gif](examples/demo.gif)
 
 ## Resources
 
