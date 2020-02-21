@@ -18,13 +18,14 @@ To use it in your code, nothing is more simple, here is an example :
 #include <stdio.h>
 #include <unistd.h>
 
-// To start using it
+// To start using Silent_Log
 #include "log.h"
 
 int main(int argc, char **argv) {
         puts("");
 
         // Defines verbosity or not (verbose is an extern global variable)
+        // If verbose variable is set to 0, log_verbose() won't display anything
         verbose = 1;
 
         log_info("This is an info message\n");
