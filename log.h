@@ -21,6 +21,7 @@ extern int verbose;
 void log_info(char *msg, ...);
 void log_verbose(char *msg, ...);
 void log_success(char *msg, ...);
+void log_debug(char *msg, ...);
 void log_error(char *msg, ...);
 void log_progress(char *msg, ...);
 
