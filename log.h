@@ -5,15 +5,13 @@
 #include <stdarg.h>
 #include <unistd.h>
 
-#define RED "\x1b[0;31m"
-#define BOLD_RED "\x1b[1;31m"
-#define GREEN "\x1b[0;32m"
-#define BOLD_GREEN "\x1b[1;32m"
-#define BLUE "\x1b[0;34m"
-#define BOLD_BLUE "\x1b[1;34m"
-#define YELLOW "\x1b[0;33m"
-#define BOLD_YELLOW "\x1b[1;33m"
-#define BOLD_ORANGE "\x1b[48;2;255;165;0m"
+#define RED 	"\x1b[38;5;196m"
+#define GREEN 	"\x1b[38;5;46m"
+#define BLUE	"\x1b[38;5;33m"
+#define YELLOW 	"\x1b[38;5;226m"
+#define ORANGE 	"\x1b[38;5;202m"
+#define GREY	"\x1b[38;5;240m"
+
 #define RESET "\x1b[0m"
 
 extern int verbose;
@@ -22,6 +20,7 @@ void log_info(char *msg, ...);
 void log_verbose(char *msg, ...);
 void log_success(char *msg, ...);
 void log_debug(char *msg, ...);
+void log_warn(char *msg, ...);
 void log_error(char *msg, ...);
 void log_progress(char *msg, ...);
 

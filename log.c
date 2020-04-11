@@ -5,7 +5,7 @@ int verbose;
 void log_info(char *msg, ...) {
 	va_list args;
 	va_start(args, msg);
-	printf("[" BOLD_BLUE "*" RESET "] ");	
+	printf("[" BLUE "*" RESET "] ");	
 	log_format(msg, args);
 	printf("\n");  
 	va_end(args);
@@ -15,7 +15,7 @@ void log_verbose(char *msg, ...) {
     if(verbose == 1) {
         va_list args;
         va_start(args, msg);
-        printf("[" BOLD_YELLOW "*" RESET "] ");
+        printf("[" GREY "#" RESET "] ");
         log_format(msg, args);
         printf("\n");
         va_end(args);
@@ -25,7 +25,7 @@ void log_verbose(char *msg, ...) {
 void log_success(char *msg, ...) {
 	va_list args;
 	va_start(args, msg);
-	printf("[" BOLD_GREEN "+" RESET "] ");	
+	printf("[" GREEN "+" RESET "] ");	
 	log_format(msg, args);
 	printf("\n");  
 	va_end(args);
@@ -34,7 +34,16 @@ void log_success(char *msg, ...) {
 void log_debug(char *msg, ...) {
     va_list args;
     va_start(args, msg);
-    printf("[" BOLD_ORANGE "*" RESET "] ");
+    printf("[" ORANGE "?" RESET "] ");
+    log_format(msg, args);
+    printf("\n");
+    va_end(args);
+}
+
+void log_warn(char *msg, ...) {
+    va_list args;
+    va_start(args, msg);
+    printf("[" YELLOW "!" RESET "] ");
     log_format(msg, args);
     printf("\n");
     va_end(args);
@@ -43,7 +52,7 @@ void log_debug(char *msg, ...) {
 void log_error(char *msg, ...) {
 	va_list args;
 	va_start(args, msg);
-	fprintf(stderr, "[" BOLD_RED "-" RESET "] ");	
+	fprintf(stderr, "[" RED "-" RESET "] ");	
 	log_format_error(msg, args);
 	fprintf(stderr, "\n");  
 	va_end(args);
@@ -52,7 +61,7 @@ void log_error(char *msg, ...) {
 void log_progress(char *msg, ...) {
 	va_list args;
 	va_start(args, msg);
-	printf("\r[" BOLD_BLUE "*" RESET "] ");	
+	printf("\r[" BLUE "*" RESET "] ");	
 	log_format(msg, args);
 	va_end(args);
 	fflush(stdout);

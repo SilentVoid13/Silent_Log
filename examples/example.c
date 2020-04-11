@@ -13,7 +13,9 @@ int main(int argc, char **argv) {
 	log_info("This is an info message\n");
 	log_success("This is a success message\n");
 	log_error("This is an error message\n");
+	log_warn("This is a warning message\n");
 	log_verbose("This is a verbose message\n");
+	log_debug("This is a debugging message\n");
 
 	int a = 1, b = 2, c = a + b;
 	// Using a format string
