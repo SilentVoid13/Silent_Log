@@ -13,6 +13,7 @@
 #define BOLD_BLUE "\x1b[1;34m"
 #define YELLOW "\x1b[0;33m"
 #define BOLD_YELLOW "\x1b[1;33m"
+#define BOLD_ORANGE "\x1b[48;2;255;165;0m"
 #define RESET "\x1b[0m"
 
 extern int verbose;

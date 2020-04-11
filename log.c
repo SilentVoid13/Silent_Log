@@ -31,6 +31,15 @@ void log_success(char *msg, ...) {
 	va_end(args);
 }
 
+void log_debug(char *msg, ...) {
+    va_list args;
+    va_start(args, msg);
+    printf("[" BOLD_ORANGE "*" RESET "] ");
+    log_format(msg, args);
+    printf("\n");
+    va_end(args);
+}
+
 void log_error(char *msg, ...) {
 	va_list args;
 	va_start(args, msg);
