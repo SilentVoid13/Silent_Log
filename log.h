@@ -1,6 +1,9 @@
 #ifndef LOG_H
 #define LOG_H
 
+// For vasprintf
+#define _GNU_SOURCE
+
 #include <stdio.h>
 #include <stdarg.h>
 #include <unistd.h>
