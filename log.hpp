@@ -1,13 +1,16 @@
-#ifndef LOG_H
-#define LOG_H
+#ifndef LOG_HPP
+#define LOG_HPP
 
 #ifndef _GNU_SOURCE
 #define _GNU_SOURCE
 #endif // _GNU_SOURCE
 
-#include <stdio.h>
-#include <stdarg.h>
+#include <iostream>
+#include <cstdio>
+#include <cstdarg>
+
 #include <unistd.h>
+
 
 #ifndef _WIN32
 
@@ -35,15 +38,21 @@
 
 extern int verbose;
 
-void log_info(char *msg, ...);
-void log_verbose(char *msg, ...);
-void log_success(char *msg, ...);
-void log_debug(char *msg, ...);
-void log_warn(char *msg, ...);
-void log_error(char *msg, ...);
-void log_progress(char *msg, ...);
+void log_info(const std::string &msg, ...);
+void log_verbose(const std::string &msg, ...);
+void log_success(const std::string &msg, ...);
+void log_debug(const std::string &msg, ...);
+void log_warn(const std::string &msg, ...);
+void log_error(const std::string &msg, ...);
+void log_progress(const std::string &msg, ...);
 
 void log_format(const char* message, va_list args);
 void log_format_error(const char *message, va_list args);
 
-#endif // LOG_H
+#ifdef _WIN32
+
+#include <windows.h>
+
+#endif // _WIN32
+
+#endif // LOG_HPP

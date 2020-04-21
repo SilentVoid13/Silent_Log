@@ -2,3 +2,5 @@
 a.out
 RESOURCES.md
 example
+
+cmake-build-*

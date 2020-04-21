@@ -14,7 +14,7 @@ Silent_Log includes the following log functions :
 - `log_debug`
 - `log_progress`
 
-Silent_Log supports string formatting. It's based on ANSI colors and supports Windows terminals.
+Silent_Log supports string formatting. It's based on ANSI colors. It doesn't support Windows terminals atm.
 
 You can suggest me or add yourself a new type of logging message.
 
@@ -67,12 +67,10 @@ cd examples
 gcc -I.. -o example example.c ../log.c
 ./example
 ```
-![Demo gif](examples/demo.gif)
+![Demo gif](img/demo.gif)
 
 ## License
 
 Silent_Log is licensed under the GNU AGPLv3 license. Refer to [LICENSE](https://github.com/SilentVoid13/Silent_Log/blob/master/LICENSE.txt) for more informations.
 
-## Resources
 
-To add Windows ANSI color support, Silent_Log relies on this great project : https://github.com/mattn/ansicolor-w32.c
