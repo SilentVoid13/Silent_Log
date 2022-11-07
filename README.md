@@ -2,8 +2,6 @@
 
 Silent_Log is a really simple library you can add to any of your C / C++ project to display some nice and pretty log messages.
 
-My code is surely not perfect, do not hesitate to make pull requests or to contact me for any problems / code enhancement suggestion at [silentvoid13@protonmail.com](mailto:silentvoid13@protonmail.com).
-
 Silent_Log includes the following log functions : 
 
 - `log_info`
