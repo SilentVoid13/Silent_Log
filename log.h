@@ -17,31 +17,27 @@
 
 #define RESET "\x1b[0m"
 
-#define LOG_INFO(...)                             \
-    do {                                          \
-        fprintf(stderr, "[" BLUE "*" RESET "] "); \
-        fprintf(stderr, __VA_ARGS__);             \
-    } while (0);
+#define INFO_SYMBOL BLUE "*" RESET
+#define WARN_SYMBOL YELLOW "!" RESET
+#define ERROR_SYMBOL RED "-" RESET
+#define SUCCESS_SYMBOL GREEN "+" RESET
+#define DEBUG_SYMBOL ORANGE "?" RESET
 
-#define LOG_WARN(...)                          \
-    do {                                            \
-        fprintf(stderr, "[" YELLOW "!" RESET "] "); \
-        fprintf(stderr, __VA_ARGS__);               \
-    } while (0);
+#define LOG_INFO(msg, ...) \
+    fprintf(stderr, "[" INFO_SYMBOL "] " msg, ##__VA_ARGS__);
 
-#define LOG_ERROR(...)                      \
-    do {                                         \
-        fprintf(stderr, "[" RED "-" RESET "] "); \
-        fprintf(stderr, __VA_ARGS__);            \
-    } while (0);
+#define LOG_WARN(msg, ...) \
+    fprintf(stderr, "[" WARN_SYMBOL "] " msg, ##__VA_ARGS__);
 
+#define LOG_ERROR(msg, ...) \
+    fprintf(stderr, "[" ERROR_SYMBOL "] " msg, ##__VA_ARGS__);
+
+#define LOG_SUCCESS(msg, ...) \
+    fprintf(stderr, "[" SUCCESS_SYMBOL "] " msg, ##__VA_ARGS__);
 
 #ifdef DEBUG
-#define LOG_DEBUG(...)                         \
-    do {                                            \
-        fprintf(stderr, "[" ORANGE "?" RESET "] "); \
-        fprintf(stderr, __VA_ARGS__);               \
-    } while (0);
+#define LOG_DEBUG(msg, ...) \
+    fprintf(stderr, "[" DEBUG_SYMBOL "] " msg, ##__VA_ARGS__);
 #else
 #define LOG_DEBUG(...) {}
 #endif
