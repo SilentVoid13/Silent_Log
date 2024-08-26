@@ -3,47 +3,47 @@
 
 #ifndef _GNU_SOURCE
 #define _GNU_SOURCE
-#endif // _GNU_SOURCE
+#endif
 
-#include <stdio.h>
 #include <stdarg.h>
+#include <stdio.h>
 #include <unistd.h>
 
-#ifndef _WIN32
-
-#define RED 	"\x1b[38;5;196m"
-#define GREEN 	"\x1b[38;5;46m"
-#define BLUE	"\x1b[38;5;33m"
-#define YELLOW 	"\x1b[38;5;226m"
-#define ORANGE 	"\x1b[38;5;202m"
-#define GREY	"\x1b[38;5;240m"
+#define RED "\x1b[38;5;196m"
+#define GREEN "\x1b[38;5;46m"
+#define BLUE "\x1b[38;5;33m"
+#define YELLOW "\x1b[38;5;226m"
+#define ORANGE "\x1b[38;5;202m"
 
 #define RESET "\x1b[0m"
 
+#define LOG_INFO(...)                             \
+    do {                                          \
+        fprintf(stderr, "[" BLUE "*" RESET "] "); \
+        fprintf(stderr, __VA_ARGS__);             \
+    } while (0);
+
+#define LOG_WARN(...)                          \
+    do {                                            \
+        fprintf(stderr, "[" YELLOW "!" RESET "] "); \
+        fprintf(stderr, __VA_ARGS__);               \
+    } while (0);
+
+#define LOG_ERROR(...)                      \
+    do {                                         \
+        fprintf(stderr, "[" RED "-" RESET "] "); \
+        fprintf(stderr, __VA_ARGS__);            \
+    } while (0);
+
+
+#ifdef DEBUG
+#define LOG_DEBUG(...)                         \
+    do {                                            \
+        fprintf(stderr, "[" ORANGE "?" RESET "] "); \
+        fprintf(stderr, __VA_ARGS__);               \
+    } while (0);
 #else
-
-#define RED
-#define GREEN
-#define BLUE
-#define YELLOW
-#define ORANGE
-#define GREY
-
-#define RESET
-
+#define LOG_DEBUG(...) {}
 #endif
-
-extern int verbose;
-
-void log_info(char *msg, ...);
-void log_verbose(char *msg, ...);
-void log_success(char *msg, ...);
-void log_debug(char *msg, ...);
-void log_warn(char *msg, ...);
-void log_error(char *msg, ...);
-void log_progress(char *msg, ...);
-
-void log_format(const char* message, va_list args);
-void log_format_error(const char *message, va_list args);
 
 #endif // LOG_H
